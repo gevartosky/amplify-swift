@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 //
-
+#if canImport(Combine)
 import Combine
 
 public typealias DataStoreCategoryBehavior = DataStoreBaseBehavior & DataStoreSubscribeBehavior
@@ -94,3 +94,4 @@ public protocol DataStoreSubscribeBehavior {
                                 sort sortInput: QuerySortInput?)
         -> AmplifyAsyncThrowingSequence<DataStoreQuerySnapshot<M>>
 }
+#endif

@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 //
-
+#if canImport(Combine)
 import Foundation
 import Combine
 
@@ -170,3 +170,4 @@ public class List<ModelType: Model>: Collection, Codable, ExpressibleByArrayLite
         try listProvider.encode(to: encoder)
     }
 }
+#endif

@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-
+#if canImport(Combine)
 import Combine
 /**
  A non-deterministic operation offers multiple paths to accomplish its task.
@@ -98,3 +98,4 @@ final class NondeterminsticOperation<T> {
         cancellables = Set<AnyCancellable>()
     }
 }
+#endif

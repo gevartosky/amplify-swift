@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 //
-
+#if canImport(Combine)
 import Combine
 
 extension DataStoreCategory: DataStoreSubscribeBehavior {
@@ -19,3 +19,4 @@ extension DataStoreCategory: DataStoreSubscribeBehavior {
         return plugin.observeQuery(for: modelType, where: predicate, sort: sortInput)
     }
 }
+#endif

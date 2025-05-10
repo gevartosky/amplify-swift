@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 //
-
+#if canImport(Combine)
 import Combine
 
 extension DataStoreResult where Success: Any {
@@ -18,3 +18,4 @@ extension DataStoreResult where Success: Any {
         }
     }
 }
+#endif

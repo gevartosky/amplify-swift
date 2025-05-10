@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 //
-
+#if canImport(Combine)
 import Foundation
 import Combine
 
@@ -158,3 +158,4 @@ public class LazyReference<ModelType: Model>: Codable, _LazyReferenceValue {
         }
     }
 }
+#endif

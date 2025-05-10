@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 //
-
+#if canImport(Combine)
 import Combine
 import Foundation
 
@@ -209,3 +209,4 @@ public protocol AmplifyOperationRequest {
     /// Options to adjust the behavior of this request, including plugin options
     var options: Options { get }
 }
+#endif
