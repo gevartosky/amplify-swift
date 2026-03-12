@@ -7,6 +7,7 @@
 #if canImport(Combine)
 import Foundation
 import Combine
+import Foundation
 
 /// `List<ModelType>` is a custom `Collection` that is capable of loading records from a data source. This is especially
 /// useful when dealing with Model associations that need to be lazy loaded. Lazy loading is performed when you access
@@ -89,7 +90,7 @@ public class List<ModelType: Model>: Collection, Codable, ExpressibleByArrayLite
 
     // MARK: - ExpressibleByArrayLiteral
 
-    required convenience public init(arrayLiteral elements: Element...) {
+    public required convenience init(arrayLiteral elements: Element...) {
         self.init(elements: elements)
     }
 
@@ -150,7 +151,7 @@ public class List<ModelType: Model>: Collection, Codable, ExpressibleByArrayLite
     /// implementations of a `ModelListProvider` for `List<Model>`. The decoders should be added to the registry by the
     /// plugin as part of its configuration steps. By delegating responsibility to the `ModelListDecoder`, it is up to
     /// the plugin to successfully return an instance of `ModelListProvider`.
-    required convenience public init(from decoder: Decoder) throws {
+    public required convenience init(from decoder: Decoder) throws {
         for listDecoder in ModelListDecoderRegistry.listDecoders.get() {
             if let listProvider = listDecoder.decode(modelType: ModelType.self, decoder: decoder) {
                 self.init(listProvider: listProvider)
